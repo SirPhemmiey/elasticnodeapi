@@ -67,7 +67,7 @@ The IDs returned in this project are string hashes directly from elastic search.
 
 ## Technologies used
 ### Node.js
-This project was built using nodejs with restify. The use case needed a lightweight non-blocking endpoint, and looking at how quickly I could bootstrap, I decided to go with nodejs. Bear in mind that this could have also been seemless with GOland, Java, PHP, etc.
+This project was built using nodejs with restify. The use case needed a lightweight non-blocking endpoint, and looking at how quickly I could bootstrap, I decided to go with nodejs. Bear in mind that this could have also been seemless with GOlang, Java, PHP, etc.
 
 ### Restify
 I could have used bare node but decided to go with restify here because of its load management and concurrency. Restify also keeps connections alive which removes the overhead of creating a connection each time when getting called from the same client.
