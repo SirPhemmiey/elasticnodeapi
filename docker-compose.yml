@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+    web:
+        build: .
+        container_name: elasticnodeapi
+        image: elasticnodeapi
+        volumes:
+            - .:/src
+            - ./docker_logs/transaction_service:/var/log/applications/transaction_service
+        ports:
+            - 8080
+        env_file:
+            - ./.env
+        networks:
+          - main_network
+    
+    elasticSearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.0.0
+        container_name: transaction_api_elasticsearch
+        ports:
+            - 9200
+            - 9300
+        networks:
+          - main_network
+
+networks:
+  main_network:
+      driver: bridge
